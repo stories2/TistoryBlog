@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>stories2 tistory blog</title>
+    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-csp.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.7/angular-material.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- !!! should change url !!! -->
+    <link rel="stylesheet" type="text/css" href="assets/css/skin.css">
+</head>
+<body ng-app="TistoryApp">
+    <div ng-layout="column" class="height-full" ng-controller="LayoutController">
+
+        <section layout="row" flex class="height-full">
+            <md-sidenav class="md-sidenav-left"
+                        md-component-id="left"
+                        md-is-locked-open="$mdMedia('gt-sm')"
+                        md-whiteframe="4">
+
+                <md-content layout-padding layout="column" >
+                    <div layout="row" layout-align="end start" hide-gt-sm>
+                        <h2>{{title}}</h2><md-button class="fa fa-close" ng-click="close()"></md-button>
+                    </div>
+                    <div layout="row" layout-align="center center" hide show-gt-sm>
+                        <h2>{{title}}</h2>
+                    </div>
+                </md-content>
+            </md-sidenav>
+
+            <md-content flex>
+                <md-content flex>
+                    <md-toolbar class="md-hue-2" >
+                        <div class="md-toolbar-tools">
+                            <md-button class="md-icon-button" aria-label="Mobile-Menu" hide-gt-sm ng-click="toggleLeft()">
+                                <div class="fa fa-bars"></div>
+                            </md-button>
+
+                            <h2 flex md-truncate>{{title}}</h2>
+
+                            <!--<md-button class="md-icon-button" aria-label="User-Status" ng-click="onBtnSignInClicked()">-->
+                                <!--<div ng-if="!isUserSignIn" class="fa-white fa-user-times"></div>-->
+                                <!--<div ng-if="isUserSignIn" class="fa-white fa-user"></div>-->
+                            <!--</md-button>-->
+                        </div>
+                    </md-toolbar>
+                </md-content>
+                <div id="spinnerView" spinner>
+                    <div class="loading-background">
+                    </div>
+                    <div class="spinner">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                    <div class="loading-text">
+                        잠시만요! <br>지금 아주 중요한 무언가가 돌아가고 있어요!
+                        <footer class="spinner-created-by">
+                            spinner created by https://loading.io/css/
+                        </footer>
+                    </div>
+                </div>
+
+                <md-content flex style="height: calc(100% - 64px);" layout="column" layout-padding >
+                    <!-- body contents start -->
+                </md-content>
+            </md-content>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-aria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-message-format.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-messages.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-mocks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-parse-ext.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-scenario.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-touch.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.7/angular-material.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <!-- !!! should change url !!! -->
+    <script src="assets/js/App.js"></script>
+    <script src="assets/js/AppDefine.js"></script>
+    <script src="assets/js/AppService.js"></script>
+    <script src="assets/js/LayoutController.js"></script>
+
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            // Code that uses jQuery's $ can follow here.
+            $('#spinnerView').hide();
+        });
+        // Code that uses other library's $ can follow here.
+    </script>
+</body>
+</html>
